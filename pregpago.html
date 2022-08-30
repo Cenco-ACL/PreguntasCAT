@@ -15,6 +15,17 @@
     <script type="text/javascript">
       sessionStorage.setItem("preg1", "Facturación y Pagos");
     </script>
-    <a href="preg3.html" class="btn"></a>
+
+    <a href="preg3.html"><button id="Pago no reflejado" onClick="reply_click(this.id)">Pago no reflejado</button></a>
+    <a href="preg3.html"><button id="Envío cartola" onClick="reply_click(this.id)">Envío cartola</button></a>
+    <a href="preg3.html"><button id="Reversa cargos/intereses" onClick="reply_click(this.id)">Reversa cargos/intereses</button></a>
+    <a href="preg3.html"><button id="Nota de crédito no reversada" onClick="reply_click(this.id)">Nota de crédito no reversada</button></a>
+
+    <script type="text/javascript">
+      function reply_click(clicked_id)
+      {
+          sessionStorage.setItem("preg2", clicked_id);
+      }
+    </script>
   </body>
 </html>
