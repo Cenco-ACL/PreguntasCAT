@@ -38,6 +38,19 @@
               line-height: 66px;
         }
       }
+      #webchat {
+          position: fixed;
+          height: calc(100% - 50px);
+          width: 600px;
+          height: 600px;
+          top: 50px;
+          overflow: hidden;
+      }
+      .main {
+          margin: 18px;
+          border-radius: 4px;
+      }
+
     </style>
     <header class="tm-header" id="tm-header">
           <div class="tm-header-wrapper">
@@ -74,9 +87,77 @@
 
       </header>
       <br><br><br><br>
-      <p align="center"><iframe src="https://web.powerva.microsoft.com/environments/Default-32ec166b-1a21-4953-815b-bc8456ead53c/bots/new_bot_d24f7443442d45f0ae963f05f6e307c6/webchat" frameborder="1" style="width: 550px; height: 650px;"></iframe></p>
-      <!-- Button trigger modal -->
-      <!--class="modal-dialog modal-lg fade modal"-->
+      <!--<p align="center"><iframe src="https://powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=d24f7443-442d-45f0-ae96-3f05f6e307c6" frameborder="1" style="width: 550px; height: 650px;"></iframe></p>-->
+      <div class="mx-auto">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6" style="width:600px; height:600px;">
+        <div>
+            <div class="heading">
+
+                <!-- Change the h1 text to change the bot name -->
+                <h1>Contoso Bot Name</h1>
+
+            </div>
+            <div id="webchat" role="main"></div>
+        </div>
+      <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+      <script>
+            const styleOptions = {
+               // Add styleOptions to customize web chat canvas
+               hideUploadButton: true
+            };
+
+            // Add your BOT ID below
+            var BOT_ID = "d24f7443-442d-45f0-ae96-3f05f6e307c6";
+
+            var theURL = "https://powerva.microsoft.com/api/botmanagement/v1/directline/directlinetoken?botId=" + BOT_ID;
+
+            const store = window.WebChat.createStore(
+               {},
+               ({ dispatch }) => next => action => {
+                   if (action.type === "DIRECT_LINE/CONNECT_FULFILLED") {
+                      dispatch({
+                          meta: {
+                               method: "keyboard",
+                           },
+                           payload: {
+                               activity: {
+                                     channelData: {
+                                          postBack: true,
+                                     },
+                                      //Web Chat will show the 'Greeting' System Topic message which has a trigger-phrase 'hello'
+                                      name: 'startConversation',
+                                      type: "event"
+                                 },
+                            },
+                            type: "DIRECT_LINE/POST_ACTIVITY",
+                       });
+                 }
+                 return next(action);
+              }
+           );
+           fetch(theURL)
+                .then(response => response.json())
+                .then(conversationInfo => {
+                    window.WebChat.renderWebChat(
+                        {
+                            directLine: window.WebChat.createDirectLine({
+                                token: conversationInfo.token,
+                            }),
+                            store: store,
+                            styleOptions: styleOptions
+                        },
+                        document.getElementById('webchat')
+                    );
+                })
+                .catch(err => console.error("An error occurred: " + err));
+        </script>
+      </div>
+      <div class="col-md-3"></div>
+        </div>
+      </div>
+
       <!-- Modal -->
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
