@@ -40,17 +40,25 @@
       }
       #webchat {
           position: fixed;
-          height: calc(100% - 50px);
-          width: 600px;
-          height: 600px;
-          top: 50px;
+          height:  800px;
+          width: 800px;
+          transform: translateX(270px);
           overflow: hidden;
+          background-image: url(img/animLogo2.gif);
+          background-size: cover;
+          border-radius: 15px;
+          background-repeat: no-repeat;
       }
       .main {
           margin: 18px;
           border-radius: 4px;
       }
-
+      #fondoimg{
+        background-image: url(img/fondowonni.gif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 15px;
+      }
     </style>
     <header class="tm-header" id="tm-header">
           <div class="tm-header-wrapper">
@@ -91,12 +99,12 @@
       <div class="mx-auto">
         <div class="row">
           <div class="col-md-3"></div>
-          <div class="col-md-6" style="width:600px; height:600px;">
+          <div class="col-md-6" style="width:1000px; height:900px; border: 15px;" id="fondoimg">
         <div>
             <div class="heading">
 
                 <!-- Change the h1 text to change the bot name -->
-                <h1>Contoso Bot Name</h1>
+                <h1>GleenIA</h1>
 
             </div>
             <div id="webchat" role="main"></div>
