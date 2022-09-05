@@ -23,7 +23,14 @@
       }
     </script>
     <style media="screen">
-
+    .btn-check:active+.btn, .btn-check:checked+.btn, .btn.active, .btn.show, .btn {
+            color: black;
+            background-color: #ffffff;
+            border-color: black;
+        }
+    .btn:hover{
+    background-color: #EC5B07;
+    }
     </style>
 
     <div class="" style="background-color:#f4f6f8;">
@@ -184,12 +191,11 @@
               var monto = getParameterByName('monto');
               var cuotas = getParameterByName('cuotas');
               document.getElementById('monto').value="$"+monto;
-              document.write(cuotas);
             </script>
             <br>
             <h2>En Cuotas</h2>
 
-            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="border-radius:15px; btn:hover: background-color: #EC5B07;">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="border-radius:15px;">
               <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
               <label class="btn " for="btnradio1">12</label>
 
