@@ -8,6 +8,7 @@
   	<link rel="preconnect" href="https://fonts.googleapis.com">
   	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   	<link href="css/bootstrap.min.css" rel="stylesheet">
   	<link href="css/style.css" rel="stylesheet">
 
@@ -21,22 +22,45 @@
           return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
     </script>
-    <nav class="navbar" style="background-color:#f4f6f8;">
-      <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-              <img src="img/logo.png" alt="" width="170" height="65" class="d-inline-block align-text-top">
-            </a>
-        <div class="row text-center">
-          <p style="color:gray;"><a style="color:gray;" class="nav-link" href="#">Mastercard <img src="img/mclogo.jpg" alt="" width="50px" height="25px"> </a></p>
-          <p ><a style="color: gray;" class="nav-link" href="#">Sucursales Abiertas</a></p>
-          <p><a style="color: gray;" class="nav-link" href="#">Servicio al Cliente</a></p>
-          <p><a style="color: gray;" class="nav-link" href="#">Mis Beneficios</a></p>
-          <p><a style="color: gray;" class="nav-link" href="#">Mis Puntos Cencosud<img src="img/puntos.png" alt="" width="50px" height="25px"></a></p>
-          <p><a style="color: gray;" href="inicio.html"><img src="img/astro.png" alt="" width="50px" height="25px"></a></p>
-          <!--<a class="nav-link active" aria-current="page" href="#">Home</a>-->
+    <style media="screen">
+
+    </style>
+
+    <div class="" style="background-color:#f4f6f8;">
+      <div class="row">
+        <div class="col-md-2" style="text-align: left;">
+          <a class="navbar-brand" href="index.html" style="text-align:left;">
+                <img src="img/logo.png" alt="" width="170" height="65" class="d-inline-block align-text-top">
+          </a>
+        </div>
+        <div class="col-md-2">
+          <br>
+          <font><a href="#" style="color:gray; text-align: center;">MasterCard <img src="img/mclogo.jpg" alt="" width="50px" height="25px"></a></font>
+        </div>
+        <div class="col-md-2">
+          <br>
+          <font><a href="#" style="color:gray; text-align: left;">Sucursales Abiertas</a></font>
+        </div>
+        <div class="col-md-2">
+          <br>
+          <font><a href="#" style="color:gray; text-align: left;">Servicio al Cliente</a></font>
+        </div>
+        <div class="col-md-1">
+          <br>
+          <font><a href="#" style="color:gray; text-align: left;">Mis Beneficios</a></font>
+        </div>
+        <div class="col-md-2">
+          <br>
+          <font><a href="inicio.html" style="color:gray; text-align: left;">Mis Puntos Cencosud<img src="img/puntos.png" alt="" width="50px" height="25px"></a></font>
+        </div>
+        <div class="col-md-1">
+          <br>
+          <font><a href="inicio.html" style="color:gray; text-align: center;"><img src="img/astro.png" alt="" width="50px" height="30px"></a></font>
+        </div>
       </div>
-      </div>
-    </nav>
+    </div>
+
+
 
       <div class="container-fluid" style="background-color:#ffffff; color: gray;">
         <div class="row" style="font-size:20px">
@@ -164,14 +188,27 @@
             </script>
             <br>
             <h2>En Cuotas</h2>
-            <div class="btn-group btn-group-lg" role="group" aria-label="Basic outlined example" style="border-color: white; border-radius: 10px;">
-              <button type="radio" class="btn btn-outline-light btn-check" checked>12</button>
-              <button type="radio" class="btn btn-outline-light btn-check">15</button>
-              <button type="radio" class="btn btn-outline-light btn-check">18</button>
-              <button type="radio" class="btn btn-outline-light btn-check">24</button>
-              <button type="radio" class="btn btn-outline-light btn-check">36</button>
-              <button type="radio" class="btn btn-outline-light btn-check">48</button>
-            </div><br>
+
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="border-radius:15px; btn:hover: background-color: #EC5B07;">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+              <label class="btn " for="btnradio1">12</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+              <label class="btn " for="btnradio2">15</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked>
+              <label class="btn " for="btnradio3">18</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+              <label class="btn " for="btnradio4">24</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+              <label class="btn " for="btnradio5">36</label>
+
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+              <label class="btn " for="btnradio6">48</label>
+            </div>
+            <br>
             <font style="color:#fa6403;">Elegir otro número de cuotas</font>
           </div>
           <center><a href="#" class="btn" style="background-color:#fa6403; width:180px; height:40px; border-radius: 8px;">Calcular</a></center><br>
@@ -182,8 +219,16 @@
           <font style="font-size:28px;">Elige fecha de tu 1° cuota</font>
         </div>
         <!--Primer boton-->
+        <a href="simulacioncredito2.html">
         <div class="btn" style="box-shadow: 1px 1px 10px rgba(0,0,0,0.2); width: 650px; height: 150px; text-align: left; padding: 15px; border-radius: 15px;">
-          <font style="font-size:20px;">Paga 1° cuota el 05/11/2022</font> <br>
+          <div class="row">
+            <div class="col-md-10">
+              <font style="font-size:20px;">Paga 1° cuota el 05/11/2022</font> <br>
+            </div>
+            <div class="col-md-2">
+              <i class="fas fa-arrow-circle-right"></i>
+            </div>
+          </div>
           <input type="checkbox"  name="cbxseguro" value="" checked style="box-shadow: 1px 1px 10px rgba(0,0,0,0.2); border-radius: 15px;">
           <label for="cbxseguro"> <b>Seguro de Cesantía*</b> </label>
           <br><br>
@@ -197,21 +242,30 @@
               <font style="text-align: right; font-size:28px;"><b>$71.647</b></font>
             </div>
           </div>
-        </div><br><br>
+        </div>
+        </a>
+        <br><br>
         <!--Seg boton-->
         <div class="btn" style="box-shadow: 1px 1px 10px rgba(0,0,0,0.2); width: 650px; height: 150px; text-align: left; padding: 15px; border-radius: 15px;">
-          <font style="font-size:20px;">Paga 1° cuota el 05/11/2022</font> <br>
+          <div class="row">
+            <div class="col-md-10">
+              <font style="font-size:20px;">Paga 1° cuota el 05/12/2022</font> <br>
+            </div>
+            <div class="col-md-2">
+              <i class="fas fa-arrow-circle-right"></i>
+            </div>
+          </div>
           <input type="checkbox"  name="cbxseguro" value="" checked style="box-shadow: 1px 1px 10px rgba(0,0,0,0.2); border-radius: 15px;">
           <label for="cbxseguro"> <b>Seguro de Cesantía*</b> </label>
           <br><br>
           <div class="row">
             <div class="col-md-8">
-              <p style:"color:gray;">CAE 23.84% | Tasa de interés 1.88%<br>
-                Costo Total del Crédito $1.298.148
+              <p style:"color:gray;">CAE 23.68% | Tasa de interés 1.88%<br>
+                Costo Total del Crédito $1.321.872
               </p>
             </div>
             <div class="col-md-4">
-              <font style="text-align: right; font-size:28px;"><b>$71.647</b></font>
+              <font style="text-align: right; font-size:28px;"><b>$72.965</b></font>
             </div>
           </div>
         </div><br><br>
@@ -220,10 +274,10 @@
         <div class="btn" style="box-shadow: 1px 1px 10px rgba(0,0,0,0.2); width: 650px; height: 150px; text-align: left; padding: 15px; border-radius: 15px;">
           <div class="row">
             <div class="col-md-10">
-              <font style="font-size:20px;">Paga 1° cuota el 05/11/2022</font> <br>
+              <font style="font-size:20px;">Paga 1° cuota el 05/01/2023</font> <br>
             </div>
             <div class="col-md-2">
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fas fa-arrow-circle-right"></i>
             </div>
           </div>
 
@@ -232,7 +286,7 @@
           <br><br>
           <div class="row">
             <div class="col-md-8">
-              <p style:"color:gray;">CAE 23.84% | Tasa de interés 1.88%<br>
+              <p style:"color:gray;">CAE 23.55% | Tasa de interés 1.88%<br>
                 Costo Total del Crédito $1.298.148
               </p>
             </div>
@@ -240,7 +294,7 @@
               <font style="text-align: right; font-size:28px;"><b>$71.647</b></font>
             </div>
           </div>
-        </div><br>
+        </div><br><br>
 
       </div>
     </div>
