@@ -12,6 +12,10 @@
   </head>
 <body style="zoom:70%;">
     <style media="screen">
+    p, span {
+    color: black;
+    font-size: 20px;
+}
     .btn-robot{
       position:fixed;
       width:60px;
@@ -111,9 +115,41 @@
         </div>
       <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
       <script>
-            const styleOptions = {
-               // Add styleOptions to customize web chat canvas
-               hideUploadButton: true
+             
+            // Set  the CSS rules.
+            const styleSet = window.WebChat.createStyleSet({
+                bubbleBackground: 'rgba(0, 0, 255, .1)',
+                bubbleFromUserBackground: 'rgba(0, 255, 0, .1)',
+                rootHeight: '100%',
+                rootWidth: '50%',
+                backgroundColor: 'paleturquoise'
+              });
+
+              // After generated, you can modify the CSS rules.
+              // Change font family and weight. 
+              styleSet.textContent = {
+                ...styleSet.textContent,
+                fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
+                fontWeight: 'bold'
+              };
+
+            // Set the avatar options. 
+            const avatarOptions = {
+                botAvatarInitials: 'BF',
+                userAvatarInitials: 'WC'
+                };
+
+            window.WebChat.renderWebChat({
+              directLine: window.WebChat.createDirectLine({
+                  token: BOT_ID}),
+              styleSet,
+              styleOptions: avatarOptions
+            }, document.getElementById('webchat'));
+            
+                
+                    const styleOptions = {
+                      // Add styleOptions to customize web chat canvas
+                      hideUploadButton: true
             };
 
             // Add your BOT ID below
@@ -174,8 +210,10 @@
               <h5 class="modal-title" id="staticBackdropLabel">Bienvenido a GlennIA</h5>
               <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">&nbsp X &nbsp</button>
             </div>
-            <div class="modal-body">
-              <p align="center"><iframe src="https://web.powerva.microsoft.com/environments/Default-32ec166b-1a21-4953-815b-bc8456ead53c/bots/new_bot_d24f7443442d45f0ae963f05f6e307c6/webchat" frameborder="1" style="width: 450px; height: 450px;"></iframe></p>
+            <div id="webchat" class="modal-body">
+              <div class="bot" align="center"><iframe src="https://web.powerva.microsoft.com/environments/Default-32ec166b-1a21-4953-815b-bc8456ead53c/bots/new_bot_d24f7443442d45f0ae963f05f6e307c6/webchat" frameborder="1" 
+              style="width: 450px; height: 450px;
+                "></iframe></div>
             </div>
           </div>
         </div>
