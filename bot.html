@@ -108,14 +108,14 @@
             <div class="heading">
 
                 <!-- Change the h1 text to change the bot name -->
-                <h1>GleenIA</h1>
+                <h1>KatIA</h1>
 
             </div>
             <div id="webchat" role="main"></div>
         </div>
       <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
       <script>
-             
+
             // Set  the CSS rules.
             const styleSet = window.WebChat.createStyleSet({
                 bubbleBackground: 'rgba(0, 0, 255, .1)',
@@ -126,14 +126,14 @@
               });
 
               // After generated, you can modify the CSS rules.
-              // Change font family and weight. 
+              // Change font family and weight.
               styleSet.textContent = {
                 ...styleSet.textContent,
                 fontFamily: "'Comic Sans MS', 'Arial', sans-serif",
                 fontWeight: 'bold'
               };
 
-            // Set the avatar options. 
+            // Set the avatar options.
             const avatarOptions = {
                 botAvatarInitials: 'BF',
                 userAvatarInitials: 'WC'
@@ -145,8 +145,8 @@
               styleSet,
               styleOptions: avatarOptions
             }, document.getElementById('webchat'));
-            
-                
+
+
                     const styleOptions = {
                       // Add styleOptions to customize web chat canvas
                       hideUploadButton: true
@@ -211,7 +211,7 @@
               <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">&nbsp X &nbsp</button>
             </div>
             <div id="webchat" class="modal-body">
-              <div class="bot" align="center"><iframe src="https://web.powerva.microsoft.com/environments/Default-32ec166b-1a21-4953-815b-bc8456ead53c/bots/new_bot_d24f7443442d45f0ae963f05f6e307c6/webchat" frameborder="1" 
+              <div class="bot" align="center"><iframe src="https://web.powerva.microsoft.com/environments/Default-32ec166b-1a21-4953-815b-bc8456ead53c/bots/new_bot_d24f7443442d45f0ae963f05f6e307c6/webchat" frameborder="1"
               style="width: 450px; height: 450px;
                 "></iframe></div>
             </div>
