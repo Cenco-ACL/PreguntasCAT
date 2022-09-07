@@ -179,22 +179,21 @@
         <div class="card text-center" style="box-shadow: 1px 1px 10px rgba(0,0,0,0.2);">
           <div class="card-body">
             <h1 class="card-title">Quiero</h1>
-            <input type="text form-control" name="monto" id="monto" value="" style="color:#fa6403; font-size:40px; text-align: center;">
+            <input type="text form-control" name="monto" id="monto" value="$1.000.000" style="color:#fa6403; font-size:40px; text-align: center;">
             <script type='text/javascript'>
               var monto = getParameterByName('monto');
               var cuotas = getParameterByName('cuotas');
-              document.getElementById('monto').value="$"+monto;
             </script>
             <br>
             <h2>En Cuotas</h2>
             <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
               <label class="btn btn-outline-warning" for="btnradio1">12</label>
 
               <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
               <label class="btn btn-outline-warning" for="btnradio2">15</label>
 
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked>
               <label class="btn btn-outline-warning" for="btnradio3">18</label>
 
               <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
